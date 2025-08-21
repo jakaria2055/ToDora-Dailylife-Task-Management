@@ -1,7 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import UserStore from "../../store/UserStore";
 
 function Navbar() {
+  const navigate = useNavigate();
+  const { UserLogoutRequest } = UserStore();
+  const onLogout = async () => {
+    await UserLogoutRequest();
+    sessionStorage.clear();
+    localStorage.clear();
+    navigate("/");
+  };
   return (
     <>
       <div className="navbar bg-base-100 shadow-sm flex items-center justify-center space-x-4">
@@ -11,7 +20,10 @@ function Navbar() {
           </Link>
         </div>
         <div>
-          <Link to={"/addtask"} className="badge text-xl h-10 bg-sky-900 hover:bg-sky-700 hover:scale-105 hover:text-yellow-200 transform duration-300 ">
+          <Link
+            to={"/addtask"}
+            className="badge text-xl h-10 bg-sky-900 hover:bg-sky-700 hover:scale-105 hover:text-yellow-200 transform duration-300 "
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -60,9 +72,9 @@ function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to={"/logout"} className="justify-between">
+                <button onClick={onLogout} className="justify-between">
                   <span className="badge">Logout</span>
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

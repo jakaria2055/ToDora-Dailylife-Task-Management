@@ -10,64 +10,7 @@ import {
   userVerifyService,
 } from "../services/user.service.js";
 
-//export const getAllUsers = async (req, res) => {
-//   try {
-//     const users = await getAllUsersService();
 
-//     return res.status(200).json({
-//       message: "Users Data Successfully Sent",
-//       data: users,
-//     });
-//   } catch (error) {
-//     console.log(error.message);
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
-
-// export const createUser = async (req, res) => {
-//   try {
-//     const newUser = await createUserService(req.body);
-//     return res.status(201).json({
-//       message: "User Created Successfully",
-//       data: newUser,
-//     });
-//   } catch (error) {
-//     console.log(error.message);
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
-
-// export const updateUser = async (req, res) => {
-//   try {
-//     const updatedUser = await updateUserService(req.params.id, req.body);
-//     if (!updatedUser) {
-//       return res.status(404).json({ message: "User not found" });
-//     }
-//     return res.status(200).json({
-//       message: "User Updated Successfully",
-//       data: updatedUser,
-//     });
-//   } catch (error) {
-//     console.log(error.message);
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
-
-// export const deleteUser = async (req, res) => {
-//   try {
-//     const deletedUser = await deleteUserService(req.params.id);
-//     if (!deletedUser) {
-//       return res.status(404).json({ message: "User not found" });
-//     }
-//     return res.status(200).json({
-//       message: "User Deleted Successfully",
-//       data: deletedUser,
-//     });
-//   } catch (error) {
-//     console.log(error.message);
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
 
 export const registerUser = async (req, res) => {
   try {

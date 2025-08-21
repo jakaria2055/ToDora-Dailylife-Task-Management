@@ -4,7 +4,6 @@ import Layout from "../component/layout/Layout";
 function IsLogedoutSkeleton() {
   return (
     <>
-      <Layout>
         <div
           tabIndex={0}
           className="collapse collapse-arrow bg-base-100 border-base-300 border"
@@ -28,7 +27,7 @@ function IsLogedoutSkeleton() {
             Click the "Profile" button in the top right corner and Login.
           </div>
         </div>
-      </Layout>
+
     </>
   );
 }

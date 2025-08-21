@@ -10,6 +10,8 @@ function Logout() {
   useEffect(() => {
     (async () => {
       const res = await UserLogoutRequest();
+      sessionStorage.clear();
+      localStorage.clear();
       if (res) {
         toast.success("Logged out successfully");
         navigate("/islogeout");
