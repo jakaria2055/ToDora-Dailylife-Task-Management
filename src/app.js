@@ -17,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: (origin, callback) => {
+    console.log("CORS request origin:", origin);
     if (!origin) return callback(null, true); // allow server-to-server or Postman
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
