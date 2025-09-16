@@ -10,8 +10,6 @@ import {
   userVerifyService,
 } from "../services/user.service.js";
 
-
-
 export const registerUser = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -44,6 +42,9 @@ export const loginUser = async (req, res) => {
       sameSite: "Strict",
       maxAge: 1 * 24 * 60 * 60 * 1000,
     });
+
+    res.cookie("accesstoken", result.accesstoken);
+    res.cookie("refreshtoken", result.refreshtoken);
 
     return res.status(200).json(result);
   } catch (error) {
@@ -118,7 +119,3 @@ export const logoutUser = async (req, res) => {
       .json({ message: error.message || "Something went wrong" });
   }
 };
-
-
-
-
