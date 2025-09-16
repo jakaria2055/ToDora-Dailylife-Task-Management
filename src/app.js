@@ -15,8 +15,8 @@ app.use(cors());
 
 
 // ROUTES ENTRY
+app.get("/", (req, res) => res.send("Server is Working fine"));
 app.use('/api/v1', router)
-
 
 
 
